@@ -21,3 +21,19 @@ export function getSentenceCount(content: string) {
 export function padNumber(value: number) {
   return String(value).padStart(2, "0");
 }
+
+export function getReadingTime(content: string) {
+  const words = getWordCount(content);
+
+  if (words === 0) {
+    return "0 minute";
+  }
+
+  const minutes = Math.floor(words / 200);
+
+  if (minutes < 1) {
+    return "<1 minute";
+  }
+
+  return minutes === 1 ? "1 minute" : `${minutes} minutes`;
+}

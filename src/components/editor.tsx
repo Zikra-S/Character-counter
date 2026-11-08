@@ -1,5 +1,5 @@
 import { useCounterStore } from "../state/counterStore";
-import { getCharCount } from "../helpers/textCounts";
+import { getCharCount, getReadingTime } from "../helpers/textCounts";
 import infoIcon from "../assets/images/icon-info.svg";
 
 function Editor() {
@@ -59,6 +59,8 @@ function Editor() {
             />
           </label>
         )}
+
+        <p className="md:ml-auto">Approx. reading time: {getReadingTime(content)}</p>
       </div>
     </section>
   );
