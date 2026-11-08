@@ -37,3 +37,23 @@ export function getReadingTime(content: string) {
 
   return minutes === 1 ? "1 minute" : `${minutes} minutes`;
 }
+
+export function getLetterStats(content: string) {
+  const counts: Record<string, number> = {};
+  let total = 0;
+
+  for (const char of content.toUpperCase()) {
+    if (char >= "A" && char <= "Z") {
+      counts[char] = (counts[char] ?? 0) + 1;
+      total += 1;
+    }
+  }
+
+  return Object.entries(counts)
+    .map(([letter, count]) => ({
+      letter,
+      count,
+      percent: (count / total) * 100,
+    }))
+    .sort((a, b) => b.count - a.count || a.letter.localeCompare(b.letter));
+}
