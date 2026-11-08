@@ -10,31 +10,23 @@ function LetterChart() {
   const visible = showAll ? letters : letters.slice(0, 5);
 
   return (
-    <section className="mt-8">
-      <h2 className="text-xl font-bold">Letter Density</h2>
+    <section className="mt-10 pb-10">
+      <h2 className="text-xl font-medium md:text-2xl">Letter Density</h2>
 
       {letters.length === 0 ? (
-        <p className="mt-4">
-          No characters found. Start typing to see letter density.
-        </p>
+        <p className="mt-5 text-sm md:text-base">No characters found. Start typing to see letter density.</p>
       ) : (
         <>
-          <ul className="mt-4 grid gap-3">
+          <ul className="mt-5 grid gap-3">
             {visible.map((item) => (
-              <li key={item.letter} className="flex items-center gap-4">
-                <span className="w-4">{item.letter}</span>
+              <li key={item.letter} className="flex items-center gap-3 md:gap-4">
+                <span className="w-4 text-sm">{item.letter}</span>
 
-                <div
-                  aria-hidden="true"
-                  className="h-3 flex-1 rounded-full bg-gray-200"
-                >
-                  <div
-                    className="h-3 rounded-full bg-purple-400"
-                    style={{ width: `${item.percent}%` }}
-                  />
+                <div aria-hidden="true" className="h-3 flex-1 rounded-full bg-mist-line dark:bg-night-soft">
+                  <div className="h-3 rounded-full bg-card-purple" style={{ width: `${item.percent}%` }} />
                 </div>
 
-                <span>
+                <span className="min-w-24 text-right text-sm">
                   {item.count} ({item.percent.toFixed(2)}%)
                 </span>
               </li>
@@ -45,9 +37,21 @@ function LetterChart() {
             <button
               onClick={() => setShowAll(!showAll)}
               aria-expanded={showAll}
-              className="mt-4 cursor-pointer"
-            >
+              className="mt-5 flex cursor-pointer items-center gap-2 hover:opacity-70">
               {showAll ? "See less" : "See more"}
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+                className={showAll ? "rotate-180" : ""}>
+                <path d="m6 9 6 6 6-6" />
+              </svg>
             </button>
           )}
         </>
