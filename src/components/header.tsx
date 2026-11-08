@@ -16,14 +16,13 @@ function Header() {
 
   return (
     <header className="flex items-center justify-between">
-      <img src={logoLight} alt="Character Counter" className="dark:hidden" />
-      <img src={logoDark} alt="Character Counter" className="hidden dark:block" />
+      <img src={logoLight} alt="Character Counter" className="h-8 md:h-10 dark:hidden" />
+      <img src={logoDark} alt="Character Counter" className="hidden h-8 md:h-10 dark:block" />
 
       <button
         onClick={toggleTheme}
         aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
-        className="cursor-pointer border p-2"
-      >
+        className="grid size-10 cursor-pointer place-items-center rounded-lg bg-mist-line hover:opacity-70 dark:bg-night-soft">
         <img src={isDark ? sunIcon : moonIcon} alt="" />
       </button>
     </header>

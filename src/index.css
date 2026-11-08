@@ -1,2 +1,15 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+
+  --color-night: #121319;
+  --color-night-soft: #21222b;
+  --color-mist: #f2f2f7;
+  --color-mist-line: #e4e4ee;
+  --color-grape: #b87ff1;
+  --color-card-purple: #cba2f4;
+  --color-card-orange: #f2a33a;
+  --color-card-coral: #ee8863;
+}
