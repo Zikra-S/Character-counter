@@ -6,6 +6,10 @@ A responsive text analyzer that counts characters, words, and sentences in real 
 
 You type or paste a text, and the page updates the counts, the reading time, and a letter density chart as you type. You can exclude spaces, set a character limit with a warning, and switch between a light and a dark theme. The layout changes between mobile and desktop screen sizes, and every button has a hover state.
 
+## Preview
+
+![Character counter preview](./Preview.png)
+
 ## Features
 
 - Responsive layout for mobile and desktop screens
