@@ -1,11 +1,11 @@
-import TextInput from "./components/textInput";
-import Stats from "./components/stats";
+import Editor from "./components/editor";
+import CountCards from "./components/countCards";
 
 function App() {
   return (
     <main className="mx-auto max-w-4xl p-6">
-      <TextInput />
-      <Stats />
+      <Editor />
+      <CountCards />
     </main>
   );
 }
