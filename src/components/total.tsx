@@ -1,4 +1,4 @@
-import { useTextStore } from "../store/useTextStore";
+import { useTextStore } from "../store/counterStore";
 
 function Total() {
   const text = useTextStore((state) => state.text);
